@@ -2,8 +2,19 @@
 body{
     background-color: DimGray;
     margin-left: 1em;
+    color:#C0C0C0;
 }
 
+.grid { display: table; }
+.grid div { display: table-row; }
+.grid div span {
+    display: table-cell;
+    padding-right: 10px;
+    
+}
+
+.freestyle { position: relative; }
+.freestyle div { position: relative; }
 
 
 #avatar-text{
@@ -15,4 +26,23 @@ body{
     height: 50px;
     width: 50px;
     border-radius: 5px;
+}
+
+#profileName{
+    position: fixed;
+    top:40px;
+}
+
+#profileNameText{
+    color:white;
+}
+
+#first{ 
+}
+
+#second{
+}
+
+#third{
+    text-decoration:underline;
 }
