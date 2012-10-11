@@ -6,6 +6,11 @@ body{
     color:#C0C0C0;
 }
 
+.divider{
+    border-top: 1px solid darkgray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 
 #avatar-text{
