@@ -65,3 +65,18 @@ input:-ms-input-placeholder {
     display:block;
 }
 
+#notifications{
+    margin-bottom: 15px;
+}
+
+#friend-text{
+    margin-bottom: 7px;
+}
+
+#join-display{
+    margin-left: 15px;
+}
+
+#join-sound{
+    margin-left: 15px;
+}
