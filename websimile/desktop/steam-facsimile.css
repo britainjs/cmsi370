@@ -17,6 +17,10 @@ body{
     color:#C0C0C0;
 }
 
+#change{
+    text-decoration: underline;
+}
+
 #portrait{
     border: 3px groove #0000FF;
     height: 50px;
@@ -29,6 +33,10 @@ body{
     margin-bottom: 17px;
     background-color: #696969;
     
+}
+
+#communityProfile{
+    text-decoration: underline;
 }
 
 input::-webkit-input-placeholder {
