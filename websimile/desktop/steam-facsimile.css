@@ -1,20 +1,11 @@
 
+
 body{
-    background-color: DimGray;
+    background: #696969;
     margin-left: 1em;
     color:#C0C0C0;
 }
 
-.grid { display: table; }
-.grid div { display: table-row; }
-.grid div span {
-    display: table-cell;
-    padding-right: 10px;
-    
-}
-
-.freestyle { position: relative; }
-.freestyle div { position: relative; }
 
 
 #avatar-text{
@@ -29,20 +20,34 @@ body{
 }
 
 #profileName{
-    position: fixed;
-    top:40px;
+    margin-top: 10px;
+    margin-bottom: 17px;
+    background-color: #696969;
+    
+}
+
+input::-webkit-input-placeholder {
+    color:   white;
+}
+input:-moz-placeholder {
+    color:    white;
+}
+input:-ms-input-placeholder {
+    color:    white;
 }
 
 #profileNameText{
-    color:white;
+    color:whitesmoke;
 }
 
-#first{ 
+#public-profile{   
 }
 
-#second{
+#avatar{
+    display: block;
 }
 
-#third{
-    text-decoration:underline;
+#name{
+    display:block;
 }
+
