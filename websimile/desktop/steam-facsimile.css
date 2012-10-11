@@ -10,11 +10,13 @@ body{
     border-top: 1px solid darkgray;
     margin-top: 10px;
     margin-bottom: 10px;
+   
 }
 
+#profileLine{
+}
 
-#avatar-text{
-    color:#C0C0C0;
+#boxesLine{
 }
 
 #change{
@@ -53,8 +55,7 @@ input:-ms-input-placeholder {
     color:whitesmoke;
 }
 
-#public-profile{   
-}
+
 
 #avatar{
     display: block;
