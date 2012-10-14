@@ -99,7 +99,7 @@ input[type=radio]:checked {
     color: #C0C0C0;
 }
 
-input::-webkit-input-placeholder{
+input:-webkit-input-placeholder{
     color:   white;
 }
 input:-moz-placeholder {
