@@ -10,8 +10,6 @@ body{
     border-top: 1px solid darkgray;
     margin-top: 10px;
     margin-bottom: 10px;
-    background:-webkit-linear-gradient( left, darkgray 0%, darkgray 60%,
-        #696969 100%);
    
 }
 
@@ -83,7 +81,7 @@ input[type=checkbox]{
     color: #C0C0C0;
 }
 
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder{
     color:   white;
 }
 input:-moz-placeholder {
@@ -93,6 +91,9 @@ input:-ms-input-placeholder {
     color:    white;
 }
 
+input[type="text"]{
+    color: white;
+}
 #profileNameText{
     color:whitesmoke;
 }
@@ -113,12 +114,25 @@ input:-ms-input-placeholder {
 
 #friend-text{
     margin-bottom: 7px;
+    margin-left: 20px;
 }
 
 #join-display{
-    margin-left: 15px;
+    margin-left: 45px;
 }
 
 #join-sound{
-    margin-left: 15px;
+    margin-left: 45px;
 }
+
+#message-text{
+    margin-bottom: 7px;
+}
+
+#message-display{
+    margin-left: 25px;
+}
+
+#message-sound{
+    margin-left:25px;
+}   

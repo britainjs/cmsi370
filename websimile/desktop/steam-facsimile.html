@@ -43,7 +43,7 @@ pane -->
                 <div class= "divider" id= "profileLine"> </div>
             </div>
 
-            <div class= "span10">
+            <div class= "span10" id= "chat">
                 <label class="checkbox">
                     <input type= "checkbox" value= "">
                     Automatically sign into Friends when I start Steam
@@ -63,16 +63,29 @@ pane -->
             </div>
 
             <div class= "span12" id= "notifications"> Notifications & Sounds</div>
-            <div class= "span3" id= "friend-join"> 
-                <div id= "friend-text">When any Friend joins a game</div>
-                <label class= "checkbox" id= "join-display">
-                    <input type= "checkbox" value= "">
-                    Display a notification
-                </label>
-                <label class= "checkbox" id= "join-sound">
-                    <input type= "checkbox" value= "">
-                    Play a sound
-                </label>
+            <div class= "row">
+                <div class= "span3" id= "friend-join"> 
+                    <div id= "friend-text">When any Friend joins a game</div>
+                    <label class= "checkbox" id= "join-display">
+                        <input type= "checkbox" value= "">
+                        Display a notification
+                    </label>
+                    <label class= "checkbox" id= "join-sound">
+                        <input type= "checkbox" value= "">
+                        Play a sound
+                    </label>
+                </div>
+                <div class= "span3 offset1" id= "message">
+                    <div id= "message-text">When I receive a message</div>
+                    <label class= "checkbox" id= "message-display">
+                        <input type= "checkbox" value= "">
+                        Display a notification
+                    </label>
+                    <label class= "checkbox" id= "message-sound">
+                        <input type= "checkbox" value= "">
+                        Play a sound
+                    </label>
+                </div>
             </div>
                             
             
