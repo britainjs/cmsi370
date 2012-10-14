@@ -10,8 +10,48 @@ body{
     border-top: 1px solid darkgray;
     margin-top: 10px;
     margin-bottom: 10px;
+    background:-webkit-linear-gradient( left, darkgray 0%, darkgray 60%,
+        #696969 100%);
    
 }
+
+/*The checkbox styling is modified from 
+http://37signals.com/svn/posts/2609-customizing-web-forms-with-css3-and-webkit
+Apparently the only way to change the background color on a checkbox is to completely
+override the current settings.
+*/
+input, textarea, select {
+   border: 1px solid darkgray;
+   padding: 0.5em;
+   font-size: 15px;
+   line-height: 1.2em;
+   width: 60%;
+   background: #696969;
+   -webkit-appearance: none;
+   -webkit-border-radius: 0.5em;
+   -moz-appearance: none;
+   -moz-border-radius: 0.5em;
+  
+ }
+
+input[type=checkbox]{
+   display: inline-block;
+   font-size: 15px;
+   line-height: 1em;
+   margin: 0 0.25em 0 0;
+   padding: 0;
+   width: 1.25em;
+   height: 1.25em;
+   -webkit-border-radius: 0.25em;
+   -moz-border-radius: 0.25em;
+   vertical-align: text-top;
+ }
+ 
+ input[type=checkbox]:checked {
+   background: url("check.png") no-repeat center center;
+   -webkit-background-size: 18px 18px;
+   -moz-background-size: 18px 18px;
+ }
 
 #profileLine{
 }
@@ -21,6 +61,7 @@ body{
 
 #change{
     text-decoration: underline;
+    color:#C0C0C0;
 }
 
 #portrait{
@@ -39,6 +80,7 @@ body{
 
 #communityProfile{
     text-decoration: underline;
+    color: #C0C0C0;
 }
 
 input::-webkit-input-placeholder {
