@@ -2,3 +2,42 @@ body{
     background: black;
     color: white;
 }
+
+#options{
+    background: white;
+    color: black;
+    float: left;
+    height: 900px;
+}
+
+#voice-bar{
+    display: block;
+    width: 100%;
+    background: -webkit-linear-gradient(top, black, black);
+    background: -mozt-linear-gradient(top, black, black);
+    
+}
+
+#voice-bar:hover{
+    display: block;
+    width: 100%;
+    background-image: -webkit-linear-gradient(top, green,green);
+    background-image: -mozt-linear-gradient(top, green, green);
+}
+
+#voice-number{
+    float: right;
+}
+
+#voice-volume{
+    border: 1px solid lightgray;
+    margin: 5px;
+    padding: 3px;
+}
+
+
+
+#preferences{
+    padding-left: 0px;
+    
+}
