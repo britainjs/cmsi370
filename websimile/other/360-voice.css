@@ -1,6 +1,12 @@
 body{
     background: black;
     color: white;
+    font-size: 25px;
+}
+
+.divider{
+    border-top: 1px solid darkgray;
+   
 }
 
 #options{
@@ -39,5 +45,41 @@ body{
 
 #preferences{
     padding-left: 0px;
+    
+}
+
+#game-bar{
+    display: block;
+    width: 60%;
+    background: -webkit-linear-gradient(top, black, black);
+    background: -mozt-linear-gradient(top, black, black);
+    
+}
+
+#game-bar:hover{
+    display: block;
+    width: 60%;
+    background-image: -webkit-linear-gradient(top, green,green);
+    background-image: -mozt-linear-gradient(top, green, green);
+}
+
+#game-volume{
+    border: 1px solid lightgray;
+    margin: 5px;
+    padding: 3px;
+}
+
+#game-number{
+    float: right;
+}
+
+#output{
+    position: fixed;
+    top: 850px;
+    margin-left: 10px;
+}
+
+.radio{
+    font-size: 25px;
     
 }

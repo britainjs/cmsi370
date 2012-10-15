@@ -31,14 +31,42 @@
                 <div class= "span6" id= "options">
                     <div  id= "voice-volume" >
                         <div class= "row-fluid">
-                            <div class= "span3"> Voice Volume</div>
+                            <div class= "span5"> Voice Volume</div>
                             <div class= "span1 offset6" id= "voice-number"> 10</div>
                         </div>
                         <div class= "progress">
                             <div class= "bar" id= "voice-bar"></div>
                         </div>
                     </div>
+                    <div id= "game-volume">
+                        <div class="row-fluid">
+                            <div class= "span5"> Game Volume</div>
+                            <div class= "span1 offset6" id= "game-number"> 6</div>
+                        </div>
+                        <div class= "progress">
+                            <div class= "bar" id= "game-bar"></div>
+                        </div>
+                    </div>
+                    <div class= "span5" id= "output">
+                        Voice Output
+                        <div class= "divider"></div>
+                        <label class= "radio" id= "headset">
+                            <input type="radio" name= "output" value= "headset" checked>
+                            Play Through Headset
+                        </label>
+                        <div class= "divider"></div>
+                        <label class= "radio" id= "speakers">
+                            <input type= "radio" name= "output" value= "speakers">
+                            Play Through Speakers
+                        </label>
+                        <div class= "divider"></div>
+                        <label class= "radio" id= "both">
+                            <input type= "radio" name= "output" value= "both">
+                            Play Through Both
+                        </label>
+                    </div>
                 </div>
+
             </div>
         </div>
     </body>
