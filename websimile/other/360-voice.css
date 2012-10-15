@@ -14,6 +14,8 @@ body{
     color: black;
     float: left;
     height: 900px;
+    margin-right: 0px;
+    padding-right: 0px;
 }
 
 #voice-bar{
@@ -82,4 +84,33 @@ body{
 .radio{
     font-size: 25px;
     
+}
+
+#description{
+    font-size: 25px;
+    background-color: gray;
+    height: 900px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#voice-desc{
+    margin-top: 50px;
+}
+
+#game-desc{
+    margin-top: 10px;
+}
+
+input, textarea, select {
+   border: 1px solid darkgray;
+   padding: 0.5em;
+   font-size: 15px;
+   line-height: 1.2em;
+   width: 60%;
+   -webkit-appearance: none;
+   -webkit-border-radius: 1em;
+   -moz-appearance: none;
+   -moz-border-radius: 1em;
 }
