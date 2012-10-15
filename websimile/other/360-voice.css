@@ -1,7 +1,7 @@
 body{
     background: black;
     color: white;
-    font-size: 25px;
+    font-size: 29px;
 }
 
 .divider{
@@ -78,16 +78,20 @@ body{
 #output{
     position: fixed;
     top: 850px;
-    margin-left: 10px;
+    margin-left: 20px;
+}
+
+#text{
+    margin-bottom: 10px;
 }
 
 .radio{
-    font-size: 25px;
+    font-size: 29px;
     
 }
 
 #description{
-    font-size: 25px;
+    font-size: 29px;
     background-color: gray;
     height: 900px;
     margin-left: 0px;
@@ -113,4 +117,24 @@ input, textarea, select {
    -webkit-border-radius: 1em;
    -moz-appearance: none;
    -moz-border-radius: 1em;
+}
+
+input[type=radio]{
+   display: inline-block;
+   font-size: 15px;
+   line-height: 1em;
+   margin: 0 0.25em 0 0;
+   padding: 0;
+   width: 1.25em;
+   height: 1.25em;
+   -webkit-border-radius: 1em;
+   -moz-border-radius:1em;
+   vertical-align: text-top;
+   border: 1px solid darkgray;
+ }
+ 
+input[type=radio]:checked {
+    background: url("black-circle.png") no-repeat center center;
+    -webkit-background-size: 20px 20px;
+    -moz-background-size: 20px 20px;
 }
