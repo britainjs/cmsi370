@@ -1,12 +1,16 @@
 body{
     background: black;
     color: white;
-    font-size: 29px;
+    
 }
 
 .divider{
     border-top: 1px solid darkgray;
    
+}
+
+#headers{
+    display: inline;
 }
 
 #options{
@@ -16,6 +20,7 @@ body{
     height: 900px;
     margin-right: 0px;
     padding-right: 0px;
+    font-size: 29px;
 }
 
 #voice-bar{
@@ -76,9 +81,20 @@ body{
 }
 
 #output{
-    position: fixed;
-    top: 850px;
+    margin-top: 620px;
     margin-left: 20px;
+}
+
+#headset:hover{
+    background: green;
+}
+
+#speakers:hover{
+    background: green;
+}
+
+#both:hover{
+    background: green;
 }
 
 #text{
@@ -97,6 +113,11 @@ body{
     margin-left: 0px;
     padding-left: 0px;
     padding-right: 0px;
+    line-height: 35px;
+}
+
+#brief{
+    margin-top: 20px;
 }
 
 #voice-desc{
@@ -137,4 +158,13 @@ input[type=radio]:checked {
     background: url("black-circle.png") no-repeat center center;
     -webkit-background-size: 20px 20px;
     -moz-background-size: 20px 20px;
+}
+
+#a-button{
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 25px;
+
 }
