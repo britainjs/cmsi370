@@ -29,6 +29,7 @@ input, textarea, select {
    -webkit-border-radius: 0.5em;
    -moz-appearance: none;
    -moz-border-radius: 0.5em;
+    background-color: #696969;
   
  }
 
@@ -68,11 +69,6 @@ input[type=radio]:checked {
     background: url("white-circle.png") no-repeat center center;
     -webkit-background-size: 13px 13px;
     -moz-background-size: 12px 12px;
-}
-#profileLine{
-}
-
-#boxesLine{
 }
 
 #change{
