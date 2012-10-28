@@ -1,20 +1,9 @@
-%% This BibTeX bibliography file was created using BibDesk.
-%% http://bibdesk.sourceforge.net/
+\begin{thebibliography}{1}
 
+\bibitem{medialoot}
+Tony Thomas.
+\newblock Skeuomorphic design: What it is, who uses it, and why you need to
+  know.
+\newblock http://medialoot.com/blog/skeuomorphic-design, March 2012.
 
-%% Created for Britain Southwick at 2012-10-28 04:16:42 -0700 
-
-
-%% Saved with string encoding Unicode (UTF-8) 
-
-
-
-@misc{medialoot,
-	Author = {Thomas, Tony},
-	Date-Added = {2012-10-28 11:13:27 +0000},
-	Date-Modified = {2012-10-28 11:15:49 +0000},
-	Howpublished = {url\{http://medialoot.com/blog/skeuomorphic-design}},
-	Month = {March},
-	Read = {0},
-	Title = {Skeuomorphic Design: What it is, Who uses it, and Why You Need to Know},
-	Year = {2012}}
+\end{thebibliography}
