@@ -105,6 +105,10 @@ var Boxes = {
             // this.movingBox.
             this.movingBox = null;
         }else if (this.resizingBox) {
+                .mousemove(Boxes.highlight)
+                .mouseleave(Boxes.unhighlight)
+                .mousedown(Boxes.startMove);
+                this.resizingBox = null;
             }
 
         // In either case, restore the highlight behavior that was
@@ -113,7 +117,9 @@ var Boxes = {
             .removeClass("box-highlight")
             .mousemove(Boxes.highlight)
             .mouseleave(Boxes.unhighlight);
+        
     },
+        
 
     /**
      * Indicates that an element is highlighted.
@@ -128,7 +134,7 @@ var Boxes = {
     unhighlight: function () {
         $(this).removeClass("box-highlight");
     },
-
+    
     /**
      * Begins a box move sequence.
      */
@@ -158,7 +164,7 @@ var Boxes = {
             // deal with it.
             event.stopPropagation();
         }
-    }
+    },
     /**
      * Begins a box resize sequence.
      */
@@ -174,6 +180,6 @@ var Boxes = {
             event.stopPropagation();
         }
     
-    }
-
+    },
+    
 };

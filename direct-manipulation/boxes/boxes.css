@@ -11,6 +11,7 @@
     border: thin solid black;
     cursor: move;
     position: absolute;
+    resize: both;
 }
 
 .box-highlight {
