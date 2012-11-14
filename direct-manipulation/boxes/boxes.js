@@ -74,6 +74,16 @@ var Boxes = {
                 left: event.pageX - this.deltaX,
                 top: event.pageY - this.deltaY
             });
+        }else if (this.resizingBox) {
+            newOffset = {
+                left: (this.anchorX < event.pageX) ? this.anchorX : event.pageX,
+                top: (this.anchorY < event.pageY) ? this.anchorY : event.pageY
+            };
+            
+            this.resizingBox
+                .offset(newOffset)
+                .width(Math.abs(event.pageX - this.anchorX))
+                .height(Math.abs(event.pageY - this.anchorY));
         }
     },
 
@@ -149,26 +159,19 @@ var Boxes = {
             event.stopPropagation();
         }
     }
-    
+    /**
+     * Begins a box resize sequence.
+     */
     startResize: function (event) {
     // Only resize on left mouse button.
     
         if(event.which === Boxes.LEFT_BUTTON) {
-            var jThis = $(this),
-                startOffset = jThis.offset(),
-                parent = jThis.parent().get(0);
+            this.anchorX = event.pageX;
+            this.anchorY = event.pageY;
                 
-            parent.resizingBox = jThis;
-               
-            var newOffset = {
-                left: (this.anchorX < event.pageX) ? this.anchorX : event.pageX,
-                top: (this.anchorY < event.pageY) ? this.anchorY : event.pageY
-            };
-
-            this.resizingBox
-                .offset(newOffset)
-                .width(Math.abs(event.pageX - this.anchorX))
-                .height(Math.abs(event.pageY - this.anchorY));
+            Boxes.setupDragState();
+            
+            event.stopPropagation();
         }
     
     }
