@@ -72,7 +72,11 @@ var Boxes = {
             // Reposition the object.
             this.movingBox.offset({
                 left: event.pageX - this.deltaX,
-                top: event.pageY - this.deltaY
+                top: event.pageY - this.deltaY,
+            });
+            
+            $(".drawing-area").mouseout(function(){
+                this.movingBox.remove();
             });
         }else if (this.resizingBox) {
             newOffset = {
@@ -104,6 +108,7 @@ var Boxes = {
             // Change state to "not-moving-anything" by clearing out
             // this.movingBox.
             this.movingBox = null;
+            this.unbind("mouseout");
         }else if (this.resizingBox) {
                 this.resizingBox = null;
             }
@@ -160,6 +165,7 @@ var Boxes = {
             // Eat up the event so that the drawing area does not
             // deal with it.
             event.stopPropagation();
+            
         }
     },
     /**
@@ -169,6 +175,7 @@ var Boxes = {
     // Only resize on left mouse button.
     
         if(event.which === Boxes.LEFT_BUTTON) {
+            this.resizingBox = $(this);
             this.anchorX = event.pageX;
             this.anchorY = event.pageY;
                 
