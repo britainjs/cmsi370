@@ -94,7 +94,8 @@ var Boxes = {
             // Change state to "not-moving-anything" by clearing out
             // this.movingBox.
             this.movingBox = null;
-        }
+        }else if (this.resizingBox) {
+            }
 
         // In either case, restore the highlight behavior that was
         // temporarily removed while the drag was happening.
@@ -147,6 +148,29 @@ var Boxes = {
             // deal with it.
             event.stopPropagation();
         }
+    }
+    
+    startResize: function (event) {
+    // Only resize on left mouse button.
+    
+        if(event.which === Boxes.LEFT_BUTTON) {
+            var jThis = $(this),
+                startOffset = jThis.offset(),
+                parent = jThis.parent().get(0);
+                
+            parent.resizingBox = jThis;
+               
+            var newOffset = {
+                left: (this.anchorX < event.pageX) ? this.anchorX : event.pageX,
+                top: (this.anchorY < event.pageY) ? this.anchorY : event.pageY
+            };
+
+            this.resizingBox
+                .offset(newOffset)
+                .width(Math.abs(event.pageX - this.anchorX))
+                .height(Math.abs(event.pageY - this.anchorY));
+        }
+    
     }
 
 };
