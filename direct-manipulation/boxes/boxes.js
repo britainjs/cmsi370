@@ -105,9 +105,6 @@ var Boxes = {
             // this.movingBox.
             this.movingBox = null;
         }else if (this.resizingBox) {
-                .mousemove(Boxes.highlight)
-                .mouseleave(Boxes.unhighlight)
-                .mousedown(Boxes.startMove);
                 this.resizingBox = null;
             }
 
