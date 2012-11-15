@@ -75,9 +75,7 @@ var Boxes = {
                 top: event.pageY - this.deltaY,
             });
             
-            $(".drawing-area").mouseout(function(){
-                this.movingBox.remove();
-            });
+            
         }else if (this.resizingBox) {
             newOffset = {
                 left: (this.anchorX < event.pageX) ? this.anchorX : event.pageX,
@@ -108,7 +106,6 @@ var Boxes = {
             // Change state to "not-moving-anything" by clearing out
             // this.movingBox.
             this.movingBox = null;
-            this.unbind("mouseout");
         }else if (this.resizingBox) {
                 this.resizingBox = null;
             }
@@ -143,6 +140,8 @@ var Boxes = {
     startMove: function (event) {
         // We only move using the left mouse button.
         if (event.which === Boxes.LEFT_BUTTON) {
+            
+            
             // Take note of the box's current (global) location.
             var jThis = $(this),
                 startOffset = jThis.offset(),
@@ -157,7 +156,6 @@ var Boxes = {
             parent.movingBox = jThis;
             parent.deltaX = event.pageX - startOffset.left;
             parent.deltaY = event.pageY - startOffset.top;
-
             // Take away the highlight behavior while the move is
             // happening.
             Boxes.setupDragState();
