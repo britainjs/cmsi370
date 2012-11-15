@@ -105,6 +105,10 @@ var Boxes = {
         } else if (this.movingBox) {
             // Change state to "not-moving-anything" by clearing out
             // this.movingBox.
+            if( (event.pageX > $("drawing-area").style.width) || 
+                (event.pageY > $("drawing-area").style.height)){
+                
+            }
             this.movingBox = null;
         }else if (this.resizingBox) {
                 this.resizingBox = null;
