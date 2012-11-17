@@ -44,7 +44,10 @@ var Boxes = {
                 .appendTo(this)
                 .addClass("box")
                 .offset({ left: this.anchorX, top: this.anchorY });
-
+            this.drawingBox.handle = $("<div></div>")
+                .appendTo(this.drawingBox)
+                .addClass("handle")
+                //.offset({left:this.anchorX. top: this.anchorY });
             // Take away the highlight behavior while the draw is
             // happening.
             Boxes.setupDragState();
@@ -76,7 +79,7 @@ var Boxes = {
             });
             
             
-        }else if (this.resizingBox) {
+        }/*else if (this.resizingBox) {
             newOffset = {
                 left: (this.anchorX < event.pageX) ? this.anchorX : event.pageX,
                 top: (this.anchorY < event.pageY) ? this.anchorY : event.pageY
@@ -86,7 +89,7 @@ var Boxes = {
                 .offset(newOffset)
                 .width(Math.abs(event.pageX - this.anchorX))
                 .height(Math.abs(event.pageY - this.anchorY));
-        }
+        };*/
     },
 
     /**
@@ -105,14 +108,14 @@ var Boxes = {
         } else if (this.movingBox) {
             // Change state to "not-moving-anything" by clearing out
             // this.movingBox.
-            if( (event.pageX > $("drawing-area").style.width) || 
+            /*if( (event.pageX > $("drawing-area").style.width) || 
                 (event.pageY > $("drawing-area").style.height)){
                 
-            }
+            }*/
             this.movingBox = null;
-        }else if (this.resizingBox) {
+        }/*else if (this.resizingBox) {
                 this.resizingBox = null;
-            }
+            }*/
 
         // In either case, restore the highlight behavior that was
         // temporarily removed while the drag was happening.
@@ -172,7 +175,7 @@ var Boxes = {
     },
     /**
      * Begins a box resize sequence.
-     */
+     
     startResize: function (event) {
     // Only resize on left mouse button.
     
@@ -187,5 +190,5 @@ var Boxes = {
         }
     
     },
-    
+    */
 };
