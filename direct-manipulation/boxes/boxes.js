@@ -24,7 +24,7 @@ var Boxes = {
      * area is in certain states.
      */
     setupDragState: function () {
-        $(".drawing-area .box")
+        $(".drawing-area .box .handle")
             .unbind("mousemove")
             .unbind("mouseleave");
     },
@@ -47,7 +47,7 @@ var Boxes = {
             this.drawingBox.handle = $("<div></div>")
                 .appendTo(this.drawingBox)
                 .addClass("handle")
-                //.offset({left:this.anchorX. top: this.anchorY });
+                
             // Take away the highlight behavior while the draw is
             // happening.
             Boxes.setupDragState();
@@ -71,6 +71,18 @@ var Boxes = {
                 .offset(newOffset)
                 .width(Math.abs(event.pageX - this.anchorX))
                 .height(Math.abs(event.pageY - this.anchorY));
+        }else if (this.resizingBox) {
+           var newOffset = {
+                left: (this.anchorX < event.pageX) ? this.anchorX : event.pageX,
+                top: (this.anchorY < event.pageY) ? this.anchorY : event.pageY
+            };
+            
+            this.resizingBox
+                .offset(newOffset)
+                .width(Math.abs(this.anchorX - event.pageX))
+                .height(Math.abs(this.anchorY - event.pageY));        
+                
+                
         } else if (this.movingBox) {
             // Reposition the object.
             this.movingBox.offset({
@@ -78,18 +90,9 @@ var Boxes = {
                 top: event.pageY - this.deltaY,
             });
             
-            
-        }/*else if (this.resizingBox) {
-            newOffset = {
-                left: (this.anchorX < event.pageX) ? this.anchorX : event.pageX,
-                top: (this.anchorY < event.pageY) ? this.anchorY : event.pageY
-            };
-            
-            this.resizingBox
-                .offset(newOffset)
-                .width(Math.abs(event.pageX - this.anchorX))
-                .height(Math.abs(event.pageY - this.anchorY));
-        };*/
+        }   
+        
+        
     },
 
     /**
@@ -101,10 +104,14 @@ var Boxes = {
             this.drawingBox
                 .mousemove(Boxes.highlight)
                 .mouseleave(Boxes.unhighlight)
+                .handle.mousedown(Boxes.startResize)
                 .mousedown(Boxes.startMove);
-            
+                
             // All done.
             this.drawingBox = null;
+        } else if (this.resizingBox) {
+                this.resizingBox = null;    
+            
         } else if (this.movingBox) {
             // Change state to "not-moving-anything" by clearing out
             // this.movingBox.
@@ -113,9 +120,8 @@ var Boxes = {
                 
             }*/
             this.movingBox = null;
-        }/*else if (this.resizingBox) {
-                this.resizingBox = null;
-            }*/
+        
+        }
 
         // In either case, restore the highlight behavior that was
         // temporarily removed while the drag was happening.
@@ -175,14 +181,15 @@ var Boxes = {
     },
     /**
      * Begins a box resize sequence.
-     
+     */
     startResize: function (event) {
     // Only resize on left mouse button.
     
         if(event.which === Boxes.LEFT_BUTTON) {
-            this.resizingBox = $(this);
-            this.anchorX = event.pageX;
-            this.anchorY = event.pageY;
+            var jThis = $(this),
+                resizingBox = jThis.parent.get(0);
+            resizingBox.anchorX = event.pageX - resizingBox.width();
+            resizingBox.anchorY = event.pageY - resizingBox.height();
                 
             Boxes.setupDragState();
             
@@ -190,5 +197,5 @@ var Boxes = {
         }
     
     },
-    */
+    
 };
