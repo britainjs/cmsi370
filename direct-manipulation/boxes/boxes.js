@@ -104,7 +104,7 @@ var Boxes = {
             this.drawingBox
                 .mousemove(Boxes.highlight)
                 .mouseleave(Boxes.unhighlight)
-                .handle.mousedown(Boxes.startResize)
+                //.handle.mousedown(Boxes.startResize)
                 .mousedown(Boxes.startMove);
                 
             // All done.
@@ -115,10 +115,10 @@ var Boxes = {
         } else if (this.movingBox) {
             // Change state to "not-moving-anything" by clearing out
             // this.movingBox.
-            /*if( (event.pageX > $("drawing-area").style.width) || 
-                (event.pageY > $("drawing-area").style.height)){
-                
-            }*/
+            if( (event.pageX > 512) | 
+                (event.pageY > 512)){
+                    this.movingBox.remove();
+            }
             this.movingBox = null;
         
         }
