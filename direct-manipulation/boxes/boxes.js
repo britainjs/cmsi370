@@ -24,7 +24,7 @@ var Boxes = {
      * area is in certain states.
      */
     setupDragState: function () {
-        $(".drawing-area .box .handle")
+        $(".drawing-area .box ")
             .unbind("mousemove")
             .unbind("mouseleave");
     },
@@ -46,7 +46,7 @@ var Boxes = {
                 .offset({ left: this.anchorX, top: this.anchorY });
             this.drawingBox.handle = $("<div></div>")
                 .appendTo(this.drawingBox)
-                .addClass("handle")
+                .addClass("handle");
                 
             // Take away the highlight behavior while the draw is
             // happening.
@@ -72,6 +72,7 @@ var Boxes = {
                 .width(Math.abs(event.pageX - this.anchorX))
                 .height(Math.abs(event.pageY - this.anchorY));
         }else if (this.resizingBox) {
+            console.log(this);
            var newOffset = {
                 left: (this.anchorX < event.pageX) ? this.anchorX : event.pageX,
                 top: (this.anchorY < event.pageY) ? this.anchorY : event.pageY
@@ -104,9 +105,8 @@ var Boxes = {
             this.drawingBox
                 .mousemove(Boxes.highlight)
                 .mouseleave(Boxes.unhighlight)
-                //.handle.mousedown(Boxes.startResize)
-                .mousedown(Boxes.startMove);
-                
+                .mousedown(Boxes.startMove)
+                .handle.mousedown(Boxes.startResize);
             // All done.
             this.drawingBox = null;
         } else if (this.resizingBox) {
@@ -163,7 +163,6 @@ var Boxes = {
                 // We want the actual element, and not the jQuery wrapper
                 // that usually comes with it.
                 parent = jThis.parent().get(0);
-
             // Set the drawing area's state to indicate that it is
             // in the middle of a move.
             parent.movingBox = jThis;
@@ -185,11 +184,12 @@ var Boxes = {
     startResize: function (event) {
     // Only resize on left mouse button.
     
-        if(event.which === Boxes.LEFT_BUTTON) {
-            var jThis = $(this),
-                resizingBox = jThis.parent.get(0);
-            resizingBox.anchorX = event.pageX - resizingBox.width();
-            resizingBox.anchorY = event.pageY - resizingBox.height();
+        if(event.which === Boxes.LEFT_BUTTON ) {
+            console.log("resizing");
+            var jThis = $(this);
+            console.log(resizingBox);
+            //resizingBox.anchorX = event.pageX - resizingBox.width();
+            //resizingBox.anchorY = event.pageY - resizingBox.height();
                 
             Boxes.setupDragState();
             
