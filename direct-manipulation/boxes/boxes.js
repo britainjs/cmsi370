@@ -187,9 +187,9 @@ var Boxes = {
         if(event.which === Boxes.LEFT_BUTTON ) {
             console.log("resizing");
             var jThis = $(this);
-            console.log(resizingBox);
-            //resizingBox.anchorX = event.pageX - resizingBox.width();
-            //resizingBox.anchorY = event.pageY - resizingBox.height();
+            resizingBox = $(jThis).parent().get(0);
+            $(resizingBox).anchorX = event.pageX - $(resizingBox).width();
+            $(resizingBox).anchorY = event.pageY - $(resizingBox).height();
                 
             Boxes.setupDragState();
             
