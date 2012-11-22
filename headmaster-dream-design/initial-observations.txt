@@ -1,0 +1,18 @@
+* Users will be administrative types with varying degrees of computer knowledge. Therefore
+  learnability should be important. Nothing too complicated. Possibly something with a 
+  a mild skeuomorphic flair. 
+  
+* Memorability will probably not be too important. The software may be used in bursts     
+ throughout the year, but it will be used very heavily on the occasions when it is used, 
+  so memorability should not be an issue.
+  
+* The potential high volume of students should require high efficiency to make sure  
+  workers can handle the student body on time.
+  
+* Errors should be a high priority metric since mistakes could cause some trouble for 
+  students.
+  
+* Satisfaction is not high priority. It is not a "for fun" app, so I'm not going to go out
+  of my way to make it super enjoyable. That said, it should be easy enough to use that 
+  workers can get through the process without developing PTSD.
+  
