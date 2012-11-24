@@ -16,3 +16,18 @@
   of my way to make it super enjoyable. That said, it should be easy enough to use that 
   workers can get through the process without developing PTSD.
   
+* Will likely use menus, forms, and dialogues with a possibility of some small direct
+  manipulation. The app is for managerial and administrative work, so the benefits of 
+  using direct manipulation (which seems to be seen more often in "fun" apps) will not be
+  as prevalent.
+  
+* Have a consistent search bar at the top of the screen to help find students and the 
+  various functions of the app, similar to the OS X spotlight. Add an option to have the 
+  search field function as an omnibox, like in Google Chrome, or to toggle between student
+  and features. The consistency of the search bar is in line with Apple's Guideline of 
+  consistency
+
+* Have a consistent options button that will allow you to configure some basic options for
+  your account on Headmaster, such as the functionality of the above mentioned search bar.
+  Most likely will use a gear icon to represent the options button, since it seems to have
+  become the universal symbol for options.
