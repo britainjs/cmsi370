@@ -31,3 +31,9 @@
   your account on Headmaster, such as the functionality of the above mentioned search bar.
   Most likely will use a gear icon to represent the options button, since it seems to have
   become the universal symbol for options.
+  
+* Once a button that will make changes in the database is pressed, it will be disabled
+  until new content is added.
+  
+* Reactive button states. Pushed buttons will look like they have been depressed.
+
