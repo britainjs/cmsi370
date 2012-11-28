@@ -59,6 +59,8 @@ var Boxes = {
      */
     trackDrag: function (event) {
         // Don't bother if we aren't tracking anything.
+        // JD: Have you tried console.log(this.resizingBox) to see if there
+        //     really is a this.resizingBox after initiating a resize?
         if (this.drawingBox) {
             // Calculate the new box location and dimensions.  Note how
             // this might require a "corner switch."
@@ -115,6 +117,9 @@ var Boxes = {
         } else if (this.movingBox) {
             // Change state to "not-moving-anything" by clearing out
             // this.movingBox.
+
+            // JD: 512 is an avoidable hardcode!  What if the web designer
+            //     changes the drawing area CSS behind your back?
             if( (event.pageX > 512) | 
                 (event.pageY > 512)){
                     this.movingBox.remove();
@@ -187,7 +192,11 @@ var Boxes = {
         if(event.which === Boxes.LEFT_BUTTON ) {
             console.log("resizing");
             var jThis = $(this);
+
+            // JD: Take note---what object "owns" the resizingBox that is
+            //     being assigned below?
             resizingBox = $(jThis).parent().get(0);
+            // JD: Also, no need to $() something that was already $()'ed.
             $(resizingBox).anchorX = event.pageX - $(resizingBox).width();
             $(resizingBox).anchorY = event.pageY - $(resizingBox).height();
                 
