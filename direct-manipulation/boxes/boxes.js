@@ -58,6 +58,7 @@ var Boxes = {
      * Tracks a box as it is rubberbanded or moved across the drawing area.
      */
     trackDrag: function (event) {
+        //console.log(this.resizingBox);
         // Don't bother if we aren't tracking anything.
         // JD: Have you tried console.log(this.resizingBox) to see if there
         //     really is a this.resizingBox after initiating a resize?
@@ -74,7 +75,7 @@ var Boxes = {
                 .width(Math.abs(event.pageX - this.anchorX))
                 .height(Math.abs(event.pageY - this.anchorY));
         }else if (this.resizingBox) {
-            console.log(this);
+           //console.log(this);
            var newOffset = {
                 left: (this.anchorX < event.pageX) ? this.anchorX : event.pageX,
                 top: (this.anchorY < event.pageY) ? this.anchorY : event.pageY
@@ -190,15 +191,17 @@ var Boxes = {
     // Only resize on left mouse button.
     
         if(event.which === Boxes.LEFT_BUTTON ) {
-            console.log("resizing");
             var jThis = $(this);
 
             // JD: Take note---what object "owns" the resizingBox that is
-            //     being assigned below?
-            resizingBox = $(jThis).parent().get(0);
+            //     being assigned below?   
+            var parentBox = jThis.parent().get(0);
+            var superParent = $(parentBox).parent().get(0);
+            console.log(superParent);
+            superParent.resizingBox = $(parentBox);
             // JD: Also, no need to $() something that was already $()'ed.
-            $(resizingBox).anchorX = event.pageX - $(resizingBox).width();
-            $(resizingBox).anchorY = event.pageY - $(resizingBox).height();
+            //superParent.resizingBox.anchorX = event.pageX - resizingBox.width();
+            //superParent.resizingBox.anchorY = event.pageY - resizingBox.height();
                 
             Boxes.setupDragState();
             
