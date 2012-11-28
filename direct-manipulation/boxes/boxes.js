@@ -89,6 +89,12 @@ var Boxes = {
                 
         } else if (this.movingBox) {
             // Reposition the object.
+            if( (event.pageX > $(".drawing-area").width()) | 
+                (event.pageY > $(".drawing-area").height())){
+                    this.movingBox.css('background', "red");
+            }else{
+                this.movingBox.css('background', "white");
+            }
             this.movingBox.offset({
                 left: event.pageX - this.deltaX,
                 top: event.pageY - this.deltaY,
@@ -121,8 +127,8 @@ var Boxes = {
 
             // JD: 512 is an avoidable hardcode!  What if the web designer
             //     changes the drawing area CSS behind your back?
-            if( (event.pageX > 512) | 
-                (event.pageY > 512)){
+            if( (event.pageX > $(".drawing-area").width()) | 
+                (event.pageY > $(".drawing-area").height())){
                     this.movingBox.remove();
             }
             this.movingBox = null;
@@ -197,11 +203,12 @@ var Boxes = {
             //     being assigned below?   
             var parentBox = jThis.parent().get(0);
             var superParent = $(parentBox).parent().get(0);
-            console.log(superParent);
             superParent.resizingBox = $(parentBox);
             // JD: Also, no need to $() something that was already $()'ed.
-            //superParent.resizingBox.anchorX = event.pageX - resizingBox.width();
-            //superParent.resizingBox.anchorY = event.pageY - resizingBox.height();
+            superParent.resizingBox.anchorX = event.pageX 
+                - superParent.resizingBox.width();
+            superParent.resizingBox.anchorY = event.pageY
+                - superParent.resizingBox.height();
                 
             Boxes.setupDragState();
             
