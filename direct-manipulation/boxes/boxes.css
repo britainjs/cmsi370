@@ -23,7 +23,9 @@
 .handle {
     border: thin solid black;
     cursor: se-resize;
-    position: inherit;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     width: 7%;
     height: 7%;
 

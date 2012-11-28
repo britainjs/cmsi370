@@ -35,6 +35,7 @@ var Boxes = {
     startDraw: function (event) {
         // We only respond to the left mouse button.
         if (event.which === Boxes.LEFT_BUTTON) {
+            console.log(this);
             // Add a new box to the drawing area.  Note how we use
             // the drawing area as a holder of "local" variables
             // ("this" as standardized by jQuery).
@@ -83,8 +84,8 @@ var Boxes = {
             
             this.resizingBox
                 .offset(newOffset)
-                .width(Math.abs(this.anchorX - event.pageX))
-                .height(Math.abs(this.anchorY - event.pageY));        
+                .width(Math.abs(event.pageX - this.anchorX))
+                .height(Math.abs(event.pageY - this.anchorY));        
                 
                 
         } else if (this.movingBox) {
@@ -205,10 +206,10 @@ var Boxes = {
             var superParent = $(parentBox).parent().get(0);
             superParent.resizingBox = $(parentBox);
             // JD: Also, no need to $() something that was already $()'ed.
-            superParent.resizingBox.anchorX = event.pageX 
-                - superParent.resizingBox.width();
-            superParent.resizingBox.anchorY = event.pageY
-                - superParent.resizingBox.height();
+            superParent.anchorX = event.pageX
+                - $(parentBox).width();
+            superParent.anchorY = event.pageY
+                - $(parentBox).height();
                 
             Boxes.setupDragState();
             
