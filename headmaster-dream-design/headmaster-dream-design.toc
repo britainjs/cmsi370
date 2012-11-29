@@ -1,6 +1,0 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Background, Preliminary, and Related Work}{3}
-\contentsline {section}{\numberline {3}Login Screen}{3}
-\contentsline {section}{\numberline {4}General Features}{3}
-\contentsline {section}{\numberline {5}Student Pages}{4}
-\contentsline {section}{\numberline {6}Features Page}{5}
