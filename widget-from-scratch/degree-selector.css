@@ -1,5 +1,6 @@
 .selector{
     width: 500;
     height: 250;
-
+    border: thin solid black;
+    
 }
