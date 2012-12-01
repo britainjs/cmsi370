@@ -26,16 +26,18 @@ $('.degree').degreeSelector();
 $(".menu-item").mousedown(dropDown);
 
 function dropDown(){
-    $(".menu-item").css("display", "block");
-    $(".menu-item").unbind("mousedown");
-    $(".menu-item").mousedown(select);
+    var currentMenu = $($(this).siblings().get());
+    currentMenu.css("display", "block");
+    currentMenu.unbind("mousedown");
+    currentMenu.mousedown(select);
     
 }
 
 function select(){
-    $(".menu-item").css("display", "none");
+    var currentMenu = $($(this).siblings().get());
+    currentMenu.css("display", "none");
     $(this).css("display", "block");
-    $(".menu-item").unbind("mousedown");
+    currentMenu.unbind("mousedown");
     $(".menu-item").mousedown(dropDown);
     
 }
