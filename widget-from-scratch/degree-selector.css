@@ -1,26 +1,35 @@
 .selector{
     width: 50px;
     height: auto;
-    border: thin inset black;
-    display:  inline-block;
+    border: thin outset black;
+    display:  inline;
     border-radius: 5px; 
     text-align: center;
     margin-left: 10px;
     margin-bottom: 10px;
     position: absolute;
     opacity: 1.0;
+    background-color: LightSteelBlue;
 }
 
-.menu-item{
-    background-color: white;
+.menu-item, .arrow{
+    background-color: LightSteelBlue;
     width: 50px;
     display: none;
     border-bottom: thin solid grey;
     border-radius: inherit;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     cursor: default;
     position: relative;  
 }
 
-.menu-item:hover{
+.menu-item:hover, .arrow:hover{
     background-color: LightCyan;
+}
+
+.arrow{
+    font-size: xx-small;
+    display: block;
+    
 }
