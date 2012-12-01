@@ -4,10 +4,6 @@
             var selector = $("<div></div>")
                 .addClass("selector")
                 .appendTo($(this));
-            /*var menu = $("<div></div>")
-                .addClass("menu")
-                .appendTo(selector);
-                */
             var bs = $("<span>BS</span>")
                 .addClass("menu-item")
                 .appendTo(selector)
@@ -29,6 +25,7 @@ function dropDown(){
     var parent = $(this).parent().get(0);
     var currentMenu = $($(parent).children().get());
     currentMenu.css("display", "block");
+    $(parent).css("z-index", "3");
     currentMenu.unbind("mousedown");
     currentMenu.mousedown(select);
 }
@@ -40,6 +37,7 @@ function select(){
     $(this).css("display", "block");
     currentMenu.unbind("mousedown");
     $(".menu-item").mousedown(dropDown); 
+    $(".selector").css("z-index", "0");
 }
 
 

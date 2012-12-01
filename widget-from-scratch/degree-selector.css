@@ -2,22 +2,25 @@
     width: 50px;
     height: auto;
     border: thin inset black;
-    display: block;
-    border-radius: 7px;
-    
+    display:  inline-block;
+    border-radius: 5px; 
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    opacity: 1.0;
 }
 
 .menu-item{
+    background-color: white;
+    width: 50px;
     display: none;
-    border: thin solid grey;
-    position: relative;
-    z-index: 1;
-    
+    border-bottom: thin solid grey;
+    border-radius: inherit;
+    cursor: default;
+    position: relative;  
 }
 
 .menu-item:hover{
     background-color: LightCyan;
-    position: relative;
-    z-index: 1;
-   
 }
