@@ -1,18 +1,19 @@
 (function( $ ){
     $.fn.degreeSelector = function() {
         this.each(function(){
-            var selector = $("<div>Degree</div>")
+            var selector = $("<div></div>")
                 .addClass("selector")
                 .appendTo($(this));
-            var menu = $("<select></select>")
+            /*var menu = $("<div></div>")
                 .addClass("menu")
                 .appendTo(selector);
-            var bs = $("<option>BS</option>")
-                .addClass("menuItem")
-                .appendTo(menu);
-            var ba = $("<option>BA</option>")
-                .addClass("menuItem")
-                .appendTo(menu);
+                */
+            var bs = $("<span>BS</span>")
+                .addClass("menu-item")
+                .appendTo(selector);
+            var ba = $("<span>BA</span>")
+                .addClass("menu-item")
+                .appendTo(selector);
         });
     
     };
