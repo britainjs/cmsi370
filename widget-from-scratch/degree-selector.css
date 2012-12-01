@@ -9,11 +9,10 @@
     margin-bottom: 10px;
     position: absolute;
     opacity: 1.0;
-    background-color: LightSteelBlue;
+    
 }
 
 .menu-item, .arrow{
-    background-color: LightSteelBlue;
     width: 50px;
     display: none;
     border-bottom: thin solid grey;
@@ -31,5 +30,8 @@
 .arrow{
     font-size: xx-small;
     display: block;
-    
+}
+
+.selector, .menu-item, .arrow{
+    background-color: WhiteSmoke;
 }
