@@ -1,20 +1,23 @@
 .selector{
     width: 50px;
     height: auto;
-    border: medium ridge black;
+    border: thin inset black;
     display: block;
+    border-radius: 7px;
     
-}
-
-.menu{
-    display: inline;
 }
 
 .menu-item{
     display: none;
     border: thin solid grey;
+    position: relative;
+    z-index: 1;
+    
 }
 
 .menu-item:hover{
     background-color: LightCyan;
+    position: relative;
+    z-index: 1;
+   
 }

@@ -26,20 +26,20 @@ $('.degree').degreeSelector();
 $(".menu-item").mousedown(dropDown);
 
 function dropDown(){
-    var currentMenu = $($(this).siblings().get());
+    var parent = $(this).parent().get(0);
+    var currentMenu = $($(parent).children().get());
     currentMenu.css("display", "block");
     currentMenu.unbind("mousedown");
     currentMenu.mousedown(select);
-    
 }
 
 function select(){
-    var currentMenu = $($(this).siblings().get());
+    var parent = $(this).parent().get(0);
+    var currentMenu = $($(parent).children().get());
     currentMenu.css("display", "none");
     $(this).css("display", "block");
     currentMenu.unbind("mousedown");
-    $(".menu-item").mousedown(dropDown);
-    
+    $(".menu-item").mousedown(dropDown); 
 }
 
 
