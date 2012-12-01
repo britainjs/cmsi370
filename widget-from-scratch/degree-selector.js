@@ -10,7 +10,8 @@
                 */
             var bs = $("<span>BS</span>")
                 .addClass("menu-item")
-                .appendTo(selector);
+                .appendTo(selector)
+                .css("display", "block");
             var ba = $("<span>BA</span>")
                 .addClass("menu-item")
                 .appendTo(selector);
@@ -21,3 +22,22 @@
 })( jQuery );
 
 $('.degree').degreeSelector();
+
+$(".menu-item").mousedown(dropDown);
+
+function dropDown(){
+    $(".menu-item").css("display", "block");
+    $(".menu-item").unbind("mousedown");
+    $(".menu-item").mousedown(select);
+    
+}
+
+function select(){
+    $(".menu-item").css("display", "none");
+    $(this).css("display", "block");
+    $(".menu-item").unbind("mousedown");
+    $(".menu-item").mousedown(dropDown);
+    
+}
+
+

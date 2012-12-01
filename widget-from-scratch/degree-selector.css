@@ -11,6 +11,10 @@
 }
 
 .menu-item{
-    display: block;
+    display: none;
     border: thin solid grey;
+}
+
+.menu-item:hover{
+    background-color: LightCyan;
 }
