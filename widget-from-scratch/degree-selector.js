@@ -24,23 +24,19 @@
             var arrow = $("<span>▼</span>")
                 .addClass("arrow")
                 .appendTo(selector);  
-            
-            
         });
-    
     };
 
 })( jQuery );
 
 $('.degree').degreeSelector();
-
 $(".menu-item").mousedown(dropDown);
 $(".arrow").mousedown(dropDown);
 
 function dropDown(){
     /*Grab the parent of the selected element so we can get all of the elements in the
-      list*/
-    
+      list and grab the last active element in case the user closes the menu without
+      selecting a new item*/
     $(this).addClass("previous");
     var parent = $(this).parent().get(0);
     var currentMenu = $($(parent).children().get());
@@ -50,7 +46,6 @@ function dropDown(){
     //Push them to the front.
     $(parent).css("z-index", "1000");
     //Get rid of the dropDown listener and put in a selection listener.
-    
     currentMenu.mousedown(select);
     $(".arrow").unbind("mousedown");
     $(".arrow").mousedown(function(){
@@ -61,8 +56,7 @@ function dropDown(){
         $(".menu-item").mousedown(dropDown); 
         $(".arrow").css("display", "block");
         $(".arrow").mousedown(dropDown);
-    });
-        
+    });      
 }
 
 function select(){
@@ -78,8 +72,7 @@ function select(){
     currentMenu.unbind("mousedown");
     $(".menu-item").mousedown(dropDown); 
     $(".arrow").css("display", "block");
-    $(".arrow").mousedown(dropDown);
-    
+    $(".arrow").mousedown(dropDown); 
 }
 
 
