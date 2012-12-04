@@ -1,3 +1,12 @@
+/* This widget creates a drop down menu for selecting the type of degree, i.e. bs, ba,
+   etc. It is set to bs by default. No server interaction at the moment. The selection
+   function returns the selected element though, so that could be used to implement server
+   interaction. I couldn't quite work out getting the menu to close properly by clicking
+   outside the menu, but at the moment you can close it and return to the previous 
+   selection by clicking on the arrow. This plugin is used by giving a div the class
+   "degree." Any element marked with this class is given a degree selector drop down
+   when the page is loaded.*/
+
 //A function to create the menu and append one to each element with the degree class.
 (function( $ ){
     $.fn.degreeSelector = function() {
@@ -72,7 +81,8 @@ function select(){
     currentMenu.unbind("mousedown");
     $(".menu-item").mousedown(dropDown); 
     $(".arrow").css("display", "block");
-    $(".arrow").mousedown(dropDown); 
+    $(".arrow").mousedown(dropDown);
+    return $(this); 
 }
 
 
